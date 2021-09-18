@@ -29,6 +29,6 @@ class CreateRestaurantCuisinesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('restaurant_fields');
+        Schema::drop('restaurant_cuisines');
     }
 }
