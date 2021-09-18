@@ -22,7 +22,7 @@
         @yield('extraStyle')
         <style>
             :root {
-                --main_color: #eccc14;
+                --main_color: #ffe41c;
             }
             
             #login-tab.active,
