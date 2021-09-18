@@ -217,7 +217,6 @@
                         dropzoneFields['app_logo'] = dz_dzAppLogo;
                     </script>
                     @endprepend
-                    {!! Form::file('file_name') !!}
                 <!-- fixed_header Field -->
                     <div class="form-group row ">
                         {!! Form::label('fixed_header', trans("lang.app_setting_fixed_header"),['class' => 'col-4 control-label text-right']) !!}

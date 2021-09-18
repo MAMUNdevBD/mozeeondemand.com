@@ -20,7 +20,7 @@
                             +{{$category->foods_count}}
                         </div>
                         <div class="flex flex-col h-52 justify-center p-4">
-                            <img class="text-green self-center opacity-10 w-50" src="/images/categories/{{$category->name}}.svg" alt="">
+                            <img class="text-green self-center opacity-70 w-50" src="{{ $category->getFirstMediaUrl('image') }}" alt="">
                             <b class="mt-2 text-black">{{$category->name}}</b> <small class="text-gray-600">
                                 @if($category->foods_avg_price)
                                     {{__("avg_price")}} {!! getPrice($category->foods_avg_price) !!}

@@ -61,11 +61,11 @@
                             @forelse ($foods as $food)
                                 <div  onclick="goToFood({{$food->restaurant->id}})" class="cursor-pointer box h-44 w-full flex" >
                                     <div class="h-full w-1/3">
-                                        @if ($food->getFirstMediaUrl('image') != "")
-                                            <img src="{{$food->getFirstMediaUrl('image')}}" alt="food image" class="h-full w-full rounded-l-md object-cover">
-                                        @else
-                                            <img src='/images/food-placeholder.jpeg' alt="food image" class="h-full w-full rounded-l-md object-cover">
-                                        @endif
+                                    @if ($food->thumbnail($food->id) != "")
+                                        <img src="{{$food->thumbnail($food->id)}}" alt="food image" class="h-full w-full rounded-l-md object-cover">
+                                    @else
+                                        <img src='/images/food-placeholder.jpeg' alt="food image" class="h-full w-full rounded-l-md object-cover">
+                                    @endif
                                     </div>
                                     <div class="flex-1 relative flex flex-col justify-between bg-gray-50 rounded-r-md px-4 pt-4 pb-3">
                                         <div class="flex w-full justify-between align-items-start">

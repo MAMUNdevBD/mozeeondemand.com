@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    enabled: false,
+    enabled: true,
     content: ['./resources/views/**/*.php'],
   },
   darkMode: false, // or 'media' or 'class'
