@@ -17,14 +17,14 @@ button,i,a{
     outline: none;
 }
 
-.bg-green{
-    background-color: color(green);
+.bg-primary{
+    background-color: color(primary);
 }
-.text-green{
-    color: color(green);
+.text-primary{
+    color: color(primary);
 }
-.border-green{
-    border:solid color(green);
+.border-primary{
+    border:solid color(primary);
 }
 .bg-gold{
     background-color: color(gold);
@@ -55,15 +55,15 @@ button,i,a{
     padding: 0;
     border: none;
     background: rgb(250, 249, 249);
-    border-top: 2px solid color(green);
+    border-top: 2px solid color(primary);
     .dropdown-item{
         max-width: 200px;
         line-height: 35px;
         border-bottom: 1px solid color(gray);
         transition: all ease .2s;
         &:hover{
-            border-left: 3px solid color(green) ;
-            color: color(green);
+            border-left: 3px solid color(primary) ;
+            color: color(primary);
             padding-left: 20px;
         }
         &:focus{
@@ -85,7 +85,7 @@ button,i,a{
 }
 .nav-link{
     &:hover{
-        color: color(green);
+        color: color(primary);
     }
 }
 
@@ -96,18 +96,18 @@ button,i,a{
             a{                 
                 border-left: 5px solid transparent;
                 &:hover{
-                    color: color(green); 
+                    color: color(primary); 
                     background-color: #fafafa;
-                   // border-left-color: color(green);    
+                   // border-left-color: color(primary);    
                 }
                 .down{
                     transform: translateY(-50%);
                 }
             }
             a.avtive{
-                color: color(green); 
+                color: color(primary); 
                 background-color: #fafafa;
-                //border-left-color: color(green);
+                //border-left-color: color(primary);
                 .down{
                     transform: translateY(-50%) rotate(180deg);
                 }
@@ -117,7 +117,7 @@ button,i,a{
             li{
                 label{
                     &:hover{
-                        color: color(green);
+                        color: color(primary);
                     }   
                 }
                 a{
@@ -135,7 +135,7 @@ button,i,a{
 
 //  costume range
 .slider-container .bar .fill {
-    background-color: color(green);
+    background-color: color(primary);
     width: 0%;
     border: 1 solid black;
 }
@@ -143,7 +143,7 @@ button,i,a{
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    border: 2px solid color(green);
+    border: 2px solid color(primary);
     background-color: white ;
     border-radius: 50%;
     transform: rotate(-45deg) translate(0%, 0%);
@@ -164,7 +164,7 @@ button,i,a{
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    border: 2px solid color(green);
+    border: 2px solid color(primary);
     background-color: white ;
     border-radius: 50%;
     transform: rotate(-45deg) translate(0%, 0%);

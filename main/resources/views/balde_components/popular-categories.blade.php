@@ -11,7 +11,8 @@
                 {{__("popular_categories_description")}}
             </p>
         </div>
-        <div class="h-full w-full  slider">
+        <div class="hidden absolute h-full transform rotate-180 cursor-pointer -top-4 -left-4 -right-4 md:-left-8 md:-right-8 flex items-center slick-arrow"></div>
+        <div class="h-full w-full slider">
             @foreach ($categorys as $category)
                 <a href="/category/{{$category->id}}" class="p-4 nav-link hover:text-green-500 border-white">
                     <div class="relative w-full bg-white rounded shadow-md text-center ">

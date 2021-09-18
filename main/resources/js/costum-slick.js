@@ -4,8 +4,8 @@ $('.slider').slick({
     slidesToScroll: 1,
     dots: false,
     speed: 500,
-    prevArrow:"<div class='absolute h-full transform rotate-180  cursor-pointer -top-4  -left-4 flex items-center'><img src='/images/next.png' class='w-6'></div>",
-    nextArrow:"<div class='absolute h-full -top-4 -right-4 cursor-pointer flex items-center'><img src='/images/next.png' class='w-6'></div>",
+    prevArrow:"<div class='absolute h-full transform rotate-180  cursor-pointer -top-4 -left-4 md:-left-8 flex items-center'><img src='/images/next.png' class='w-6'></div>",
+    nextArrow:"<div class='absolute h-full -top-4 -right-4 md:-right-8 cursor-pointer flex items-center'><img src='/images/next.png' class='w-6'></div>",
     responsive: [
         {
             breakpoint: 1280,
