@@ -101,7 +101,7 @@
                                             {!! getPrice($food->getPrice()) !!}
                                         </p>
                                         @if ($food->discount_price !=0)
-                                                <span class="bg-red-600 text-white rounded text-sm py-1 px-2">
+                                                <span class="bg-red-600 text-black rounded text-sm py-1 px-2">
                                                     -{{number_format(100-($food->discount_price * 100 / $food->price),0)}} %
                                                 </span>
                                         @endif
