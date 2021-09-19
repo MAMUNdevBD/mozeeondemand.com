@@ -22,7 +22,7 @@
                 </li>
                 <li class="nav-item flex-1" role="presentation">
                     <a class="nav-link text-center ml-2 hover:bg-gray-100" id="sign-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">
-                        {{ __('Sign in')}} 
+                        {{ __('Sign up')}} 
                     </a>
                 </li>
             </ul>

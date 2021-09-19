@@ -19,12 +19,9 @@
                 <img src="/images/faq.jpg" alt="banner" class="absolute w-full h-full object-cover opacity-70 z-0">
                 <div class="w-full h-full bg-black"></div>
                 <div class="z-10 container  absolute  pt-5 w-11/12 md:w-2/3 flex flex-col justify-center text-center   h-96 ">
-                    <h2 class="text-2xl font-bold md:text-6xl text-white my-2">
+                    <h2 class="text-2xl font-bold md:text-6xl text-white mt-2 mb-5">
                         {{__("about_banner_header")}}
                     </h2>
-                    <p class="text-white text-xl font-semibold my-2 "> 
-                        {{__("about_banner_description")}}
-                    </p>
                     <form class="bg-white h-14 p-2 rounded flex flex-row" action="/search" method="get">
                         <input 
                             class="border-white px-2 rounded outline-white flex-1 border-r-2 "

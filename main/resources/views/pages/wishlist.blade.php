@@ -17,9 +17,6 @@
 				<h2 class="text-2xl font-bold md:text-5xl text-white my-2">
                     {{__('favorites_banner_header')}}
                 </h2>
-				<p class="text-white text-xl font-semibold my-2 "> 
-                    {{__('favorites_banner_description')}}
-                </p>
 			</div>
 		</div>
 		<section class="flex flex-col">

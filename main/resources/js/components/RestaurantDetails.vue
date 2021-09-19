@@ -471,9 +471,6 @@
           <p class="text-2xl font-bold dark:text-white">
             {{ $t("Order Summary") }}
           </p>
-          <p class="text-red-600 font-semibold">
-            {{ $t("Order Summary description") }}
-          </p>
         </div>
         <div v-if="restaurant" class="py-3 px-4 flex flex-col">
           <!-- orders -->

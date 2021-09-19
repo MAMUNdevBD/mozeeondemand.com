@@ -24,7 +24,7 @@ Route::redirect('/home', '/');
 Route::get('/help', function(){
     $appLogo = DB::table('media')->where('custom_properties->uuid', setting('app_logo'))->first();
     if($appLogo){
-        $app_logo = '/admin/main/storage/app/public/'.$appLogo->order_column.'/'.$appLogo->file_name;
+        $app_logo = '/admin/main/storage/app/public/'.$appLogo->id.'/'.$appLogo->file_name;
     }else{
         $app_logo = '/images/logo.png';
     }
@@ -50,7 +50,17 @@ Route::middleware('auth')->group(function(){
     // save the review
     Route::post('/review',[\App\Http\Controllers\RestaurantController::class, 'saveReview']);
     // return leave_review page to list all the foods in your wishlist
-    Route::view('/wishlist', 'pages.wishlist');
+    Route::get('/wishlist', function(){
+        $appLogo = DB::table('media')->where('custom_properties->uuid', setting('app_logo'))->first();
+        if($appLogo){
+            $app_logo = '/admin/main/storage/app/public/'.$appLogo->id.'/'.$appLogo->file_name;
+        }else{
+            $app_logo = '/images/logo.png';
+        }
+        return view('pages.wishlist', [
+            'app_logo' => $app_logo
+        ]);
+    });
     // get all foods in auth wishlist
     Route::get('/favorites/getFavoriteFooods/{skip}',[\App\Http\Controllers\HomeController::class, 'getFavoriteFooods']);
     //go to make order page 
@@ -64,7 +74,18 @@ Route::middleware('auth')->group(function(){
     // visite your account
     Route::get('/my-account ', [\App\Http\Controllers\Auth\UserController::class, 'index']);
     // contact us page
-    Route::view('/contactus', 'pages.contactus');
+    Route::get('/contactus', function()
+    {
+        $appLogo = DB::table('media')->where('custom_properties->uuid', setting('app_logo'))->first();
+        if($appLogo){
+            $app_logo = '/admin/main/storage/app/public/'.$appLogo->id.'/'.$appLogo->file_name;
+        }else{
+            $app_logo = '/images/logo.png';
+        }
+        return view('pages.contactus', [
+            'app_logo' => $app_logo
+        ]);
+    });
 });     
 
 Route::get('/check', function($skip = 0) {

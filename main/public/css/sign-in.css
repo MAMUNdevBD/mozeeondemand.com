@@ -1,1 +1,6 @@
-#login-tab.active,#sign-tab.active{background-color:#63d56d}
+#login-tab.active,
+#sign-tab.active {
+  background-color: #63D56D;
+}
+
+

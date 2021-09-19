@@ -18,7 +18,7 @@
                 autofocus
                 autocomplete="name" 
                 placeholder="{{__('Enter your full name')}}"
-                class="outline-none  placeholder-gray-500  flex-1 h-8" 
+                class="outline-none  placeholder-gray-500  flex-1 h-8 w-full" 
                 >
         </div>
         @error('name')
@@ -39,7 +39,7 @@
                 autofocus 
                 autocomplete="email" 
                 placeholder="{{ __('Enter your Email') }} "
-                class="outline-none placeholder-gray-500 flex-1 h-8"
+                class="outline-none placeholder-gray-500 flex-1 h-8 w-full"
             >   
         </div>
         @error('email')
@@ -57,7 +57,7 @@
                 name="password"
                 required 
                 placeholder="{{ __('Enter your Password') }} "
-                class="outline-none placeholder-gray-500 flex-1 h-8"
+                class="outline-none placeholder-gray-500 flex-1 h-8 w-full"
             >   
         </div>
         @error('password')
@@ -75,7 +75,7 @@
                 name="password_confirmation"
                 required 
                 placeholder="{{ __('Confirme your password') }} "
-                class="outline-none placeholder-gray-500 flex-1 h-8"
+                class="outline-none placeholder-gray-500 flex-1 h-8 w-full"
             >   
         </div>
     {{-- Terms and Conditions --}}
