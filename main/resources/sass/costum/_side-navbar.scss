@@ -7,7 +7,7 @@ nav.side-bar{
     top: 0;
     bottom: 0;
     width: 50%;
-    background-color: color(white);
+    background-color: color(black);
     transition: 600ms;
     transition-timing-function: ease;
     overflow: hidden;
@@ -57,11 +57,11 @@ nav.side-bar{
                     //border-left-color: color(green);
                 }
                 a{
-                    color: color(black);
+                    color: color(rgb(255, 255, 255));
                     position: relative;
                     text-decoration: none;
                     font-size: 1em;
-                    padding-left: 40px; 
+                    padding-left: 20px; 
                     transition: .1s;
                     transition-timing-function: ease-in;
                     display: block;

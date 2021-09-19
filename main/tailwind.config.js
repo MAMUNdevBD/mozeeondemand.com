@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       './resources/views/**/*.php',
       './resources/js/**/*.vue'
