@@ -104,7 +104,7 @@ class Restaurant extends Model implements HasMedia
         return [
             'restaurant' => $this,
             'cover' => $this->getFirstMediaUrl('image'),
-            'cuisine'=>$cuisine['name'],
+            'cuisine'=>$cuisine,
             'rate'=> $this->rate,
         ];
     }

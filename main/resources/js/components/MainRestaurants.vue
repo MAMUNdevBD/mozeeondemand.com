@@ -404,11 +404,11 @@
                 @click="goToRestaurant(restaurant.restaurant.id)"
                 class="h-2/3 w-full relative cursor-pointer"
               >
-                <span
+                <span v-if="restaurant.cuisine"
                   class="absolute text-white rounded top-3 left-3 text-sm font-semibold py-1 px-2"
                   style="background-color: #333"
                 >
-                  {{ restaurant.cuisine }}
+                  {{ restaurant.cuisine.name }}
                 </span>
                 <span
                   v-if="restaurant.restaurant.closed"
