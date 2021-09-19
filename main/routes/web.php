@@ -1,4 +1,5 @@
 <?php
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -66,6 +67,13 @@ Route::middleware('auth')->group(function(){
     Route::view('/contactus', 'pages.contactus');
 });     
 
-Route::get('/check/phpinfo', function() {
-    return phpinfo();
+Route::get('/check', function($skip = 0) {
+   $a = Restaurant::latest()
+                ->take(9)
+                ->skip(9 * $skip)
+                ->with('cuisines')
+                ->get()
+                ->map
+                ->format();
+    dd($a);
 });

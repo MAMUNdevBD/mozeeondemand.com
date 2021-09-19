@@ -44,6 +44,9 @@ class Restaurant extends Model implements HasMedia
     public function cuisines()
     {
         return $this->belongsToMany(\App\Models\Cuisine::class, 'restaurant_cuisines');
+        // return DB::select('select `restaurants`.* from cuisines 
+        // inner join restaurant_cuisines as rc on cuisines.id = rc.cuisine_id
+        // inner join restaurants on rc.restaurant_id = restaurants.id;');
     }
     // public function getTopRated($number){
     //     return DB::select("
@@ -97,10 +100,11 @@ class Restaurant extends Model implements HasMedia
 
     public function format()
     {
+        $cuisine = $this->cuisines()->first();
         return [
             'restaurant' => $this,
             'cover' => $this->getFirstMediaUrl('image'),
-            'cuisine'=>$this->cuisines->first()->name,
+            'cuisine'=>$cuisine['name'],
             'rate'=> $this->rate,
         ];
     }

@@ -79,7 +79,7 @@
     </head>
     <body class=" dark:bg-gray-900">
         <div id="app">
-            <button type="button" id="top" class="z-50 hidden bg-green text-white text-2xl py-1 px-2 rounded-full outline-none border-none fixed bottom-2 right-5">
+            <button type="button" id="top" class="z-50 hidden bg-green text-black text-2xl py-1 px-2 rounded-full outline-none border-none fixed bottom-2 right-5">
                 <i class="fas fa-chevron-up"></i>
             </button>
             @yield('content')

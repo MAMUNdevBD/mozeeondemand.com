@@ -18,14 +18,15 @@ class RestaurantController extends Controller
     // get restaurants with skiping (n=$skip) restaurants
     public function index($skip)
     {
+        $restaurants = Restaurant::latest()
+                        ->take(9)
+                        ->skip(9 * $skip)
+                        ->with('cuisines')
+                        ->get()
+                        ->map
+                        ->format();
         return response()->json([
-            "restaurants" => Restaurant::latest()
-                ->take(9)
-                ->skip(9 * $skip)
-                ->with('cuisines')
-                ->get()
-                ->map
-                ->format()
+            "restaurants" => $restaurants
         ]);
     }
     // get top 4 rated restaurants
