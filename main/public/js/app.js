@@ -66329,7 +66329,7 @@ var render = function() {
                       "text-centerfont-bold text-3xl col-span-3 h-24 flex flex-row justify-center items-center"
                   },
                   [
-                    _c("div", {}, [
+                    _c("div", { staticClass: "dark:text-white" }, [
                       _vm._v(
                         "\n          " +
                           _vm._s(_vm.$t("No restaurant is found")) +

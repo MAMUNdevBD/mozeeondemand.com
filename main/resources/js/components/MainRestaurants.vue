@@ -386,7 +386,7 @@
           v-if="restaurants.length === 0"
           class="text-centerfont-bold text-3xl col-span-3 h-24 flex flex-row justify-center items-center"
         >
-          <div class="">
+          <div class="dark:text-white">
             {{ $t("No restaurant is found") }}
           </div>
         </div>

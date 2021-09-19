@@ -18,7 +18,7 @@ class Controller extends BaseController
     {
         $appLogo = DB::table('media')->where('custom_properties->uuid', setting('app_logo'))->first();
         if($appLogo){
-            $app_logo = '/admin/main/storage/app/public/'.$appLogo->order_column.'/'.$appLogo->file_name;
+            $app_logo = '/admin/main/storage/app/public/'.$appLogo->id.'/'.$appLogo->file_name;
         }else{
             $app_logo = '/images/logo.png';
         }
