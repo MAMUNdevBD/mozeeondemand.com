@@ -5,7 +5,7 @@
             <h2 class="text-2xl font-bold text-white py-3  "> 
                 At Mozee on demand we aim to meet your delivery needs and is our pleasure to serve you!
             </h2>
-            <p class="text-white font-light pt-2 pb-5 text-xl"> 
+            <p class="hidden md:block text-white font-light pt-2 pb-5 text-xl"> 
             Mozee thru our selection titles and make leisure time for your self by allowing  our team members to help 
             </p>
             <form   class="bg-white h-14 p-2 rounded flex flex-row" action="/search" method="get">

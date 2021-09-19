@@ -2,8 +2,8 @@
     <div class="w-full mt-3">
         <div class="grid gap-5 grid-cols-1 md:grid-cols-2 ">
             @forelse ($foods as $food)
-                <div  onclick="goToFood({{ $food->restaurant->id }})" class="cursor-pointer box h-44 w-full flex" >
-                    <div class="h-full w-1/3">
+                <div onclick="goToFood({{ $food->restaurant->id }})" class="cursor-pointer box w-full flex flex-col md:flex-row" >
+                    <div class="h-60 md:h-full md:w-1/3">
                         @if ($food->thumbnail($food->id) != "")
                             <img src="{{$food->thumbnail($food->id)}}" alt="food image" class="h-full w-full rounded-l-md object-cover">
                         @else
@@ -20,7 +20,7 @@
                                     {{$food->name}}
                                 </h2>
                                 <p class="text-gray-400 dark:text-gray-800 text-sm">{{$food->restaurant->name}}</p>
-                                <p class="text-gray-400 dark:text-gray-800 text-xs">{{$food->restaurant->address}}</p>
+                                <p class="text-gray-400 dark:text-gray-800 text-xs mb-2">{{$food->restaurant->address}}</p>
                             </div>
                             @if ($food->rate)
                                 <div class="bg-gray-200 py-1 px-2 rounded">
@@ -33,7 +33,7 @@
                             
                         </div>
 
-                        <div class="flex w-full justify-between align-items-baseline">
+                        <div class="flex flex-col lg:flex-row w-full justify-between align-items-baseline">
                             <div class="flex flex-row items-center">
                                 <p class="text-green text-base font-bold sm py-1 px-2">
                                     {!! getPrice($food->getPrice()) !!}

@@ -1,8 +1,8 @@
 <nav class="side-bar" id="side-bar" >
-    <i id="cancel"> &times</i>
+    <i id="cancel" class="text-black"> &times</i>
     <div class="top dark:bg-gray-600">
-        <i class="fas fa-utensils"></i>
-        <span>{{ setting('app_name') }}</span>
+        <i class="fas fa-utensils text-black"></i>
+        <span class="text-black">{{ setting('app_name') }}</span>
     </div>
     <div class="links">
         <ul>

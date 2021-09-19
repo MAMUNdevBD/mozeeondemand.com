@@ -233,7 +233,7 @@
         <div class="flex flex-row justify-between">
           <button
             id="open_map_phone"
-            class="bg-green relative w-16 h-12 rounded text-white"
+            class="bg-green relative w-16 h-12 rounded text-black"
           >
             <i class="fas fa-map-marked"></i>
           </button>
@@ -256,7 +256,7 @@
               >
                 <a
                   onclick="this.classList.toggle('avtive')"
-                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
                 >
                   {{ $t("Cuisines") }}
                   <i
@@ -270,7 +270,7 @@
                     class="w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 border-none"
                   >
                     <label
-                      class="input_checkbox relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base"
+                      class="input_checkbox dark:text-white relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base"
                       :for="cuisine.id"
                     >
                       {{ cuisine.name }}
@@ -298,7 +298,7 @@
               >
                 <a
                   onclick="this.classList.toggle('avtive')"
-                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
                 >
                   {{ $t("Price") }}
                   <i
@@ -335,7 +335,7 @@
               >
                 <a
                   onclick="this.classList.toggle('avtive')"
-                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                  class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
                 >
                   {{ $t("Rating") }}
                   <i
@@ -381,7 +381,7 @@
         </div>
       </div>
       <!-- gallery -->
-      <div class="lg:w-9/12 ml-4 w-full mt-3">
+      <div class="lg:w-9/12 lg:ml-4 w-full mt-3">
         <div
           v-if="restaurants.length === 0"
           class="text-centerfont-bold text-3xl col-span-3 h-24 flex flex-row justify-center items-center"

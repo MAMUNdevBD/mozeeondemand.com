@@ -32,7 +32,7 @@ Vue.component('index-banner', require('./components/IndexBanner.vue').default);
 import * as VueGoogleMaps from 'vue2-google-maps';
 Vue.use(VueGoogleMaps, {
     load: {
-        key:google_maps_key
+        key:'AIzaSyAPaHHiMRDAmbjinJaJqOGzq8R3DS-zpS0'
     }
 });
 // browser-geolocation
