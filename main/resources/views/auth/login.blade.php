@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('extraStyle')
-    <link href="{{ asset('css/confirm-delivery.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sign-in.css') }}" rel="stylesheet">
+    <link href="{{ asset('/main/public/css/confirm-delivery.css') }}" rel="stylesheet">
+    <link href="{{ asset('/main/public/css/sign-in.css') }}" rel="stylesheet">
     
 @endsection
 
@@ -13,8 +13,8 @@
     @include('balde_components.navs.nav-bar-v2')
     
     <main class="w-full mt-16 mb-2 flex flex-row justify-center" >
-        <div class="container w-4/5 md:w-3/5 lg:w-1/3 mt-3 shadow-2xl p-3  bg-white" style="height:fit-content;" >
-            <ul class="nav nav-pills w-full flex flex-row justify-between" id="myTabn" role="tablist">
+        <div class="container w-4/5 md:w-3/5 lg:w-1/3 mt-3 shadow-2xl p-3 bg-gray-50 dark:bg-gray-800" style="height:fit-content;" >
+            <ul class="nav nav-pills w-full flex flex-row justify-between text-black dark:text-white" id="myTabn" role="tablist">
                 <li class="nav-item flex-1" role="presentation">
                     <a class="nav-link active text-center mr-2 hover:bg-gray-100 " id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">
                        {{ __('Login')}} 

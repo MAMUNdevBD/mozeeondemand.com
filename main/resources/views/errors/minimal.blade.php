@@ -15,7 +15,7 @@
             <div class="text-green font-extrabold text-9xl font-mono my-2">
                 @yield('code')
             </div>
-            <div class="text-black font-semibold text-lg text-center my-2">
+            <div class="text-black dark:text-white font-semibold text-lg text-center my-2">
                 @yield('message')
             </div>
             <div class="flex flex-row justify-between w-80  my-2" >

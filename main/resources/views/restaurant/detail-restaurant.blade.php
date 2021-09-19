@@ -15,7 +15,7 @@
         <!-- top banner  -->
 		<div class="w-full relative" style="height: 65vh;">
             <!-- restaurant image -->
-            <img src="/images/restaurant-placeholder.png"  alt="just an image" class="absolute object-cover top-0 left-0 w-full h-full">
+            <img src="{{$restaurant_cover}}"  alt="just an image" class="absolute object-cover top-0 left-0 w-full h-full">
             <div class="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
             <!-- restaurant info -->
             <div class="relative container py-4 w-full h-full flex-col flex justify-end">

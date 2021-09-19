@@ -1,7 +1,7 @@
 <form class="mt-4"  method="POST" action="/register">
     @csrf
     {{-- description --}}
-        <div class="text-center my-2 text-black text-md"> 
+        <div class="text-center my-2 text-black dark:text-white text-md"> 
             {{ __('Fill the following fields to Sign in') }}
         </div>
     {{-- Name filed --}}
@@ -81,18 +81,18 @@
     {{-- Terms and Conditions --}}
         <div class="mb-1 text-sm form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="terms">
-            <label class="form-check-label text-black" for="exampleCheck1">{{__('Terms and Conditions')}}</label>
+            <label class="form-check-label text-black dark:text-white" for="exampleCheck1">{{__('Terms and Conditions')}}</label>
         </div>    
     {{-- Submit Button  --}}
         <div class="flex flex-row-reverse">
-            <button type="submit" class="btn bg-green mb-1 px-5 py-2.5 text-white">
+            <button type="submit" class="btn bg-green mb-1 px-5 py-2.5 text-black">
                 {{__('Submit')}}
             </button>
         </div>
     {{-- Login with socialite --}}
         <div class="text-center flex justify-between items-center"> 
             <div class="flex-1 h-0.5 bg-gray-300 ml-10 mr-5"></div>
-            <div>{{__('Or')}} </div> 
+            <div class="dark:text-white">{{__('Or')}} </div> 
             <div class="mr-10 ml-5 flex-1 h-0.5 bg-gray-300"></div>
         </div>
         <div class="flex flex-col mt-1">

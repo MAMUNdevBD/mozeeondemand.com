@@ -28,7 +28,7 @@
             #login-tab.active,
             #sign-tab.active {
                 background-color:var(--main_color);
-                color: #fAfAfA
+                color: #000
             }
 
             .text-green , nav.side-bar .links ul li a.active ,.nav-link:hover ,.filter ul li a:hover ,
@@ -77,7 +77,7 @@
             }
         </style>
     </head>
-    <body class=" dark:bg-gray-900">
+    <body class=" dark:bg-gray-900 overflow-x-hidden">
         <div id="app">
             <button type="button" id="top" class="z-50 hidden bg-green text-black text-2xl py-1 px-2 rounded-full outline-none border-none fixed bottom-2 right-5">
                 <i class="fas fa-chevron-up"></i>

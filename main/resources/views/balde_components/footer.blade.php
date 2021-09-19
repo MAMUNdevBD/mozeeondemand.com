@@ -45,7 +45,7 @@
     </div>
     <div class="" style="background: #222;" >
             <div class="container flex flex-col flex-wrap  py-6 mx-auto sm:flex-row">
-                    <div class="dropdown dropup">
+                    <div class="hidden dropdown dropup">
                         <button type="button" class="bg-gray-200 py-1 px-2 -mt-2 text-black rounded-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          <i class="fas fa-globe "></i>   {{__("Language")}}
                         </button>

@@ -6,20 +6,20 @@
                 <div class="h-full w-1/3">
                     <img :src='food.cover !=""? food.cover :"/images/food-placeholder.jpeg"' alt="food image" class="h-full w-full rounded-l-md object-cover">
                 </div>
-                <div class=" flex-1 relative flex flex-col justify-between bg-gray-50 rounded-r-md px-4 pt-4 pb-3">
+                <div class="flex-1 relative flex flex-col justify-between bg-gray-50 dark:bg-gray-800 rounded-r-md px-4 pt-4 pb-3">
                     <div class="flex w-full justify-between align-items-start">
                         <div>
-                            <span class="text-gray-800 ">
+                            <span class="text-gray-800 dark:text-gray-100">
                                 {{food.category.name}}
                             </span>
-                            <h2 class="text-black text-2xl font-bold ">
+                            <h2 class="text-black dark:text-white text-2xl font-bold ">
                                 {{food.food.name}}
                             </h2>
                             <p class="text-gray-400 text-sm">{{food.restaurant.name}}</p>
                             <p class="text-gray-400 text-xs">{{food.restaurant.address}}</p>
                         </div>
                         <div v-if="food.rate !=null" class="bg-gray-200 py-1 px-2 rounded">
-                            <span class="text-gray-700 font-semibold">
+                            <span class="text-gray-700 dark:text-gray-200 font-semibold">
                                 {{food.rate}}    
                             </span>
                             <i class="text-gold fas fa-star"></i>
@@ -41,12 +41,12 @@
                         </div>                                
                         <div class="text-sm">
                             <span class="px-1"
-                                :class="{ ['line-through text-gray-400']: !food.restaurant.available_for_delivery,['text-gray-600']:food.restaurant.available_for_delivery}">
+                                :class="{ ['line-through text-gray-400']: !food.restaurant.available_for_delivery,['text-gray-600 dark:text-gray-100']:food.restaurant.available_for_delivery}">
                                 {{$t("Delivery")}} 
                                 <i class="fas fa-motorcycle"></i>
                             </span>
                             <span class="px-1"
-                                :class="{ ['line-through text-gray-400']: food.restaurant.closed,['text-gray-600']:!food.restaurant.closed}">
+                                :class="{ ['line-through text-gray-400']: food.restaurant.closed,['text-gray-600 dark:text-gray-100']:!food.restaurant.closed}">
                                 {{$t("Take away")}}
                                 <i class="fas fa-shopping-basket"></i>
                             </span>
@@ -66,7 +66,7 @@
                 {{$t("Load more")}}  
             </button>
         </div>
-        <div v-if="foods.length === 0" class="lg:col-span-2 mb-4 md:col-span-2 col-span-1 text-center font-semibold text-2xl text-black">
+        <div v-if="foods.length === 0" class="lg:col-span-2 mb-4 md:col-span-2 col-span-1 text-center font-semibold text-2xl text-black dark:text-white">
             {{$t("Empty favorites list")}}
         </div>
     </div>                

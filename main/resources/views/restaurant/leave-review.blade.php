@@ -29,11 +29,11 @@
                 @csrf
                <input type="hidden" name="restaurant_id" value="{{$restaurant->id}}" >
                 
-                <header class="w-full bg-green text-white text-xl rounded-t-sm p-4 font-bold text-left">
+                <header class="w-full bg-green text-black text-xl rounded-t-sm p-4 font-bold text-left">
                   {{auth()->user()->name}} > {{__("Leave a review for")}}  {{$restaurant->name}}
                 </header>
                
-                <div class="bg-white grid grid-cols-4 gap-6  p-4 rounded-b-sm" > 
+                <div class="bg-gray-50 dark:bg-gray-800 grid grid-cols-4 gap-6  p-4 rounded-b-sm" > 
                     @if ($errors->any())
                         <div class="col-span-4 alert alert-danger m-1" >
                             {{__("You need to complete all the fildes")}}
@@ -42,7 +42,7 @@
                     @endif
                     
                   
-                    <div class="md:col-span-4 col-span-4 text-gray-800 text-sm font-semibold mb-1">
+                    <div class="md:col-span-4 col-span-4 text-gray-800 dark:text-white text-sm font-semibold mb-1">
                         <span class="text-xs md:text-sm">{{__("Your Rate")}} </span>
                         <span id="quality_value">0</span>
                         <div class="slider-container  py-2 ">
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="col-span-4">
-                        <h2 class="text-gray-800 text-sm font-semibold mb-2">{{__("Your review")}} </h2>
+                        <h2 class="text-gray-800 dark:text-white text-sm font-semibold mb-2">{{__("Your review")}} </h2>
                         <div class="col-span-6 md:col-span-3  rounded  shadow-md">
                             <textarea  
                                 placeholder="{{__("Add your review here")}} .............."
@@ -67,7 +67,7 @@
                     </div>
                     <div class="lg:col-span-3 md:col-span-2 col-span-4"></div>
                     <div class="col-span-4 md:col-span-2 lg:col-span-1">
-                        <button type="submit" class="form-control mb-2 p-2 border-none bg-green text-white font-semibold">
+                        <button type="submit" class="form-control mb-2 p-2 border-none bg-green text-black font-semibold">
                            {{__('Submit review')}}  
                         </button>
                     </div>                           

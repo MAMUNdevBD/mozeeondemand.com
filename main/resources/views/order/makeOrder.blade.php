@@ -13,6 +13,9 @@
         position: absolute;
         z-index: -1;
         }
+        .nav-pills .nav-link.active{
+            color: #000;
+        }
     </style>
 @endsection    
 @section('content')
@@ -29,13 +32,13 @@
                 <div class="flex-1  lg:mr-5">
                     {{-- Personal Details --}}
                         <div class="w-full rounded mb-3 shadow-lg">
-                            <header class="w-full bg-green text-white text-xl rounded-t-sm py-4 px-3 font-bold text-left">
+                            <header class="w-full bg-green text-black text-xl rounded-t-sm py-4 px-3 font-bold text-left">
                             {{__('Personal Details')}}
                             </header>
-                            <div class="bg-white grid grid-cols-6 gap-6  p-4 rounded-b-sm" >
+                            <div class="bg-gray-50 dark:bg-gray-800 grid grid-cols-6 gap-6  p-4 rounded-b-sm" >
                                 <!-- First name -->
                                     <div class="col-span-6  ">
-                                        <label for="first_name" class="block text-sm font-medium text-gray-700">
+                                        <label for="first_name" class="block text-sm font-medium text-gray-700 dark:text-white">
                                             {{__('Full name')}}
                                         </label>
                                         <input 
@@ -50,7 +53,7 @@
                                     </div>
                                 <!-- email -->
                                     <div class="col-span-6 md:col-span-3">
-                                            <label for="email" class="block text-sm font-medium text-gray-700">
+                                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-white">
                                                 {{__('Email address')}}
                                             </label>
                                             <input 
@@ -66,7 +69,7 @@
                                 <!-- phone -->
                                     @if(isset($customFields["phone"]))
                                         <div class="col-span-6 md:col-span-3   ">
-                                            <label for="phone" class="block text-sm font-medium text-gray-700"> 
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-white"> 
                                                 {{__('Phone number')}}
                                             </label>
                                             <input 
@@ -87,7 +90,7 @@
                                         <input type="hidden" name="phone_type" value="default">
                                     @else
                                         <div class="col-span-6 md:col-span-3   ">
-                                            <label for="phone" class="block text-sm font-medium text-gray-700"> 
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-white"> 
                                                 {{__('Phone number')}}
                                             </label>
                                             <input 
@@ -111,7 +114,7 @@
                                     <div id="address" class="col-span-6 grid grid-cols-6 gap-6 " >
                                             @if (isset($customFields["address"]))
                                                 <div class="col-span-5">
-                                                    <label for="address" class="block text-sm font-medium text-gray-700">
+                                                    <label for="address" class="block text-sm font-medium text-gray-700 dark:text-white">
                                                         {{__('Delivery Addres')}} 
                                                     </label>
                                                         <select id="address" name="address" required class="mt-1 p-2 outline-none  block w-full shadow-sm sm:text-sm rounded"  >
@@ -128,7 +131,7 @@
                                                 <input type="hidden" name="address_type" value="default">
                                             @else
                                                 <div class="col-span-6 md:col-span-4">
-                                                    <label for="city" class="block text-sm font-medium text-gray-700">
+                                                    <label for="city" class="block text-sm font-medium text-gray-700 dark:text-white">
                                                         {{__('Delivery Addres')}} 
                                                     </label>
                                                     <input 
@@ -146,7 +149,7 @@
                                                     @enderror
                                                 </div>   
                                                 <div class="col-span-6 md:col-span-2">
-                                                    <label for="street_address" class="block text-sm font-medium text-gray-700">
+                                                    <label for="street_address" class="block text-sm font-medium text-gray-700 dark:text-white">
                                                         {{__('Delivery Addres description')}}  
                                                     </label>
                                                     <input 
@@ -168,7 +171,7 @@
                                     </div>
                                 {{-- hint --}}
                                     <div class="col-span-6">
-                                        <label for="hint" class="block text-sm font-medium text-gray-700">
+                                        <label for="hint" class="block text-sm font-medium text-gray-700 dark:text-white">
                                             {{__("Hint")}}
                                         </label>
                                         <textarea name="hint" id="hint" cols="10" rows="4" 
@@ -180,25 +183,25 @@
                         </div>
                     {{-- Payment Method --}}
                         <div class="w-full rounded my-3 shadow-lg">
-                            <header class="w-full bg-green text-white text-xl rounded-t-sm py-4 px-3 font-bold text-left">
+                            <header class="w-full bg-green text-black text-xl rounded-t-sm py-4 px-3 font-bold text-left">
                                 {{__('Payment Method')}}
                             </header>
-                            <div class="bg-white p-4 rounded-b-sm">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-b-sm">
                                 <ul id="payment-tabs" class="nav nav-pills mb-3 flex flex-col md:flex-row" id="pills-tab" role="tablist">
                                     <li class="nav-item flex-1 text-md" role="presentation">
-                                        <a class="nav-link active flex justify-between items-center" onclick="setMethod('cash')" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                                        <a class="nav-link active flex justify-between items-center dark:text-white" onclick="setMethod('cash')" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                                             {{__('Pay with Cash')}}
                                             <i class="fas fa-wallet text-lg"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item flex-1 text-md" role="presentation">
-                                        <a class="nav-link flex justify-between items-center" onclick="setMethod('paypal')" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                                        <a class="nav-link flex justify-between items-center dark:text-white" onclick="setMethod('paypal')" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
                                             {{__('Pay with Paypal')}}
                                             <i class="fab fa-cc-paypal text-lg"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item flex-1 text-md" role="presentation">
-                                        <a class="nav-link flex justify-between items-center" onclick="setMethod('card')" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                        <a class="nav-link flex justify-between items-center dark:text-white" onclick="setMethod('card')" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
                                             {{__('Pay with Credit card')}}
                                             <i class="far fa-credit-card text-lg"></i>
                                         </a>
@@ -206,17 +209,17 @@
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                        <p class=" text-gray-900 text-3xl my-7">
+                                        <p class=" text-gray-900 dark:text-white text-3xl my-7">
                                             {{__('Pay with Cash description')}}
                                         </p>
                                     </div>
                                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                        <p class=" text-gray-900 text-3xl my-7">
+                                        <p class=" text-gray-900 dark:text-white text-3xl my-7">
                                             {{__('Comming soon')}}
                                         </p>
                                     </div>
                                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                        <p class=" text-gray-900 text-3xl my-7">
+                                        <p class=" text-gray-900 dark:text-white text-3xl my-7">
                                             {{__('Comming soon')}}
                                         </p>
                                     </div>
@@ -227,33 +230,33 @@
             {{-- Order Summary --}}
                 <div class="w-full lg:w-1/3 rounded ">
                     <!-- order liste & prices -->
-                    <div class=" w-full border-2 bg-white rounded  border-gray-300 border-dotted">
-                        <div class="text-center border-b-2 bg-gray-100 border-gray-300 border-dotted py-3">
-                            <p class="text-2xl font-bold">{{__('Order Summary')}}</p>
-                            <p id="restaurant_name" class="text-gray-900 font-medium "></p>
+                    <div class=" w-full border-2 bg-gray-50 rounded border-gray-300 dark:border-gray-500 dark:bg-gray-800 border-dotted">
+                        <div class="text-center border-b-2 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-500 border-dotted py-3">
+                            <p class="text-2xl font-bold dark:text-white">{{__('Order Summary')}}</p>
+                            <p id="restaurant_name" class="text-gray-900 dark:text-gray-200 font-medium "></p>
                         </div>
                         <div class="py-3 px-4 flex flex-col">  
                             <!-- details -->
                             <!-- Type of  Delivery -->
                             <div class="flex flex-row justify-between my-2">
-                                <div class="text-black font-normal">{{__('Order Type')}}</div>
-                                <div id="orderType" class="text-black font-bold "></div>
+                                <div class="text-black dark:text-white font-normal">{{__('Order Type')}}</div>
+                                <div id="orderType" class="text-black dark:text-white font-bold"></div>
                             </div>   
-                            <hr class="text-gray-400 my-2">
+                            <hr class="text-gray-400 dark:text-gray-100 my-2">
                             <!-- orders -->
-                            <div id="orders"></div>       
+                            <div id="orders" class="dark:text-white"></div>       
                             <!-- taxes -->
                             <div class="flex flex-row justify-between my-2">
-                                <div class="text-black font-normal">{{__('Subtotal')}}</div>
-                                <div id="subtotal" class="text-black font-bold "></div>
+                                <div class="text-black dark:text-white font-normal">{{__('Subtotal')}}</div>
+                                <div id="subtotal" class="text-black font-bold dark:text-white"></div>
                             </div>
                             <div class="flex flex-row justify-between my-2">
-                                <div class="text-black font-normal">{{__('Tax')}}</div>
-                                <div id="tax" class="text-black font-bold "></div>
+                                <div class="text-black dark:text-white font-normal">{{__('Tax')}}</div>
+                                <div id="tax" class="text-black dark:text-white font-bold "></div>
                             </div>
                             <div  class="flex flex-row justify-between my-2">
-                                <div class="text-black font-normal">{{__('Delivery fee')}}</div>
-                                <div id="delivery_fee" class="text-black font-bold "></div>
+                                <div class="text-black dark:text-white font-normal">{{__('Delivery fee')}}</div>
+                                <div id="delivery_fee" class="text-black dark:text-white font-bold "></div>
                             </div>
                             <!-- total -->
                             <div class="flex flex-row justify-between my-2 text-red-600 text-xl font-semibold">
@@ -265,10 +268,10 @@
                                 <input type="hidden" name="order" id="order">
                                 <input type="hidden" name="payment_method" id="payment_method">
                                 <input type="hidden" name="orderType" id="orderTypeInput">
-                                <button type="submit" class="form-control mb-3 p-2 border-none bg-green text-white font-semibold rounded">
+                                <button type="submit" class="form-control mb-3 p-2 border-none bg-green text-black font-semibold rounded">
                                     {{__('Make your Order')}}
                                 </button>
-                                <p class="text-center text-gray-600 text-sm font-light">
+                                <p class="text-center text-gray-600 dark:text-white text-sm font-light">
                                     {{__('Or Call Us at')}}<b id="restaurant_phone" class="font-semibold" ></b>
                                 </p>
                             </div>
@@ -332,10 +335,10 @@
                     order.orders.forEach(element=>{
                         document.getElementById('orders').innerHTML +=`
                             <div class="flex flex-row justify-between my-2.5">
-                                <div class="text-black font-normal">
+                                <div class="text-black dark:text-white font-normal">
                                     ${element.numberOfMeals} x ${element.food_name}
                                 </div>
-                                <div class="text-black font-bold ">
+                                <div class="text-black dark:text-white font-bold ">
                                     ${showPrice(element.price)}
                                 </div>
                             </div>`

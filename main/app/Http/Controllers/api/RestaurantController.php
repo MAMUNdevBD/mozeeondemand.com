@@ -79,7 +79,7 @@ class RestaurantController extends Controller
                 "food" => $food,
                 "price" => $food->getPrice(),
                 "price_format" => getPrice($food->getPrice()),
-                "cover" => $food->getFirstMediaUrl('image') != "" ? $food->getFirstMediaUrl('image') : "/images/food-placeholder.jpeg",
+                "cover" => $food->thumbnail($food->id) ? $food->thumbnail($food->id) : '/main/public/images/placeholder.jpeg',
                 "rate" => $food->getRateAttribute() ? $food->getRateAttribute() : null,
                 "category" => $food->category,
                 "extras_groups" => $groups,

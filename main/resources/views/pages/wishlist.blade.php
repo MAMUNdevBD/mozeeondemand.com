@@ -28,10 +28,10 @@
 					<div class="w-full  self-center content-center flex flex-row justify-center -mt-4 mb-6">
                         <p class="border-1 border-green w-44"></p>
                     </div>
-                    <h2 class="text-black text-4xl font-medium py-1 text-center" >
+                    <h2 class="text-black dark:text-white text-4xl font-medium py-1 text-center" >
                         {{__('favorites_header')}}
                     </h2>
-                    <p class="text-gray-600 text-md font-normal  py-1 text-center">
+                    <p class="text-gray-600 dark:text-gray-200 text-md font-normal  py-1 text-center">
                         {{__('favorites_description')}}
                     </p>
 				</div>

@@ -15,11 +15,10 @@ class RestaurantController extends Controller
     }
     public function show(Restaurant $restaurant)
     {
-
         return view('restaurant.detail-restaurant')->with(
             [
                 'restaurant' => $restaurant,
-                'restaurant_cover' => $restaurant->getFirstMediaUrl('image')!= "" ? $restaurant->getFirstMediaUrl('image') : "/images/restaurant-placeholder.png" ,
+                'restaurant_cover' => $restaurant->thumbnail($restaurant->id),
                 'restaurant_cuisine'=>$restaurant->cuisines->first()->name,
                 'restaurant_rate'=>$restaurant->getRateAttribute(),
             ]

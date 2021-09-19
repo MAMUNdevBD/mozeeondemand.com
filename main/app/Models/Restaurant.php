@@ -109,4 +109,13 @@ class Restaurant extends Model implements HasMedia
         ];
     }
 
+    public function thumbnail($restaurentID){
+        $thumb = DB::table('media')->where('model_type', 'App\Models\Restaurant')->where('model_id', $restaurentID)->first();
+        if ($thumb) {
+            return '/admin/main/storage/app/public/'.$thumb->id.'/'.$thumb->file_name;
+        }else{
+            return '/main/public/images/placeholder.jpeg';
+        }
+    }
+
 }

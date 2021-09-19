@@ -12,10 +12,10 @@
                 <img src="{{auth()->user()->getFirstMediaUrl('avatar')}}" class="rounded-full object-cover w-36 h-36 mb-2 shadow-xl" alt="user avatar">   
             </div>
             <div class="col-span-4 md:col-span-5 lg:col-span-6 mx-2 md:mx-1 flex  flex-col justify-center text-black ">
-                <p class="text-black font-bold text-4xl md:text-7xl">
+                <p class="text-black dark:text-white font-bold text-4xl md:text-7xl">
                     {{auth()->user()->name}}
                 </p>
-                <p class="text-gray-500 font-medium text-sm">
+                <p class="text-gray-500 dark:text-gray-200 font-medium text-sm">
                     {{auth()->user()->email}}
                 </p> 
                 <p class="text-gray-400 font-medium text-xs italic">
@@ -27,8 +27,8 @@
             </div>
         </div>
         {{-- My orders --}}
-        <p class="text-xl px-2 text-black font-bold">
-            {{ __('My orders')}} 
+        <p class="text-xl px-2 text-black dark:text-white font-bold">
+            {{ __('My orders')}}
         </p>
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-6">
             @forelse (auth()->user()->orders->where("active",1) as $order)
@@ -94,7 +94,7 @@
                     </div>
                 @endif 
             @empty
-                <div class="px-2 text-xl font-semibold text-black">
+                <div class="px-2 text-xl font-semibold text-black dark:text-white">
                     {{ __('No order yet')}}  
                 </div>
             @endforelse

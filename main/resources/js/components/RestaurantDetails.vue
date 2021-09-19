@@ -396,20 +396,6 @@
                 <p class="text-5xl font-extrabold">
                   {{ restaurant_rate }}
                 </p>
-                <span class="font-bold">
-                  <span v-if="restaurant_rate <= 5 && restaurant_rate >= 4">
-                    {{ $t("reviews >4") }}
-                  </span>
-                  <span v-if="restaurant_rate < 4 && restaurant_rate >= 3">
-                    {{ $t("reviews >3") }}
-                  </span>
-                  <span v-if="restaurant_rate < 3 && restaurant_rate >= 2">
-                    {{ $t("reviews >2") }}
-                  </span>
-                  <span v-if="restaurant_rate < 2 && restaurant_rate >= 1">
-                    {{ $t("reviews >1") }}
-                  </span>
-                </span>
                 <span v-if="reviews" class="text-xs font-medium">
                   {{ $t("Based on reviews", { reviews: reviews.length }) }}
                 </span>
@@ -444,7 +430,7 @@
                     class="rounded-full object-cover w-14 h-14 mb-2"
                     alt="user_avatar"
                   />
-                  <div class="text-black font-semibold text-center">
+                  <div class="text-black dark:text-white font-semibold text-center">
                     {{ review.user.name }}
                   </div>
                 </div>
@@ -453,19 +439,19 @@
                   <div
                     class="flex flex-col md:flex-row mb-2 justify-between w-full md:items-center"
                   >
-                    <div class="text-black font-semibold text-sm">
+                    <div class="text-black dark:text-white font-semibold text-sm">
                       <span class="text-green font-bold">
                         <span class="text-3xl">{{ review.rate }}</span
                         >/5
                       </span>
                       {{ $t("Average rating") }}
                     </div>
-                    <div class="text-gray-500 italic font-medium text-sm">
+                    <div class="text-gray-500 dark:text-gray-100 italic font-medium text-sm">
                       {{ review.published }}
                     </div>
                   </div>
                   <div
-                    class="text-sm my-2 text-gray-500 font-light"
+                    class="text-sm my-2 text-gray-500 dark:text-gray-100 font-light"
                     v-html="review.review"
                   ></div>
                 </div>

@@ -1,7 +1,7 @@
 <form  class="mt-8" method="POST" action="/login">
     @csrf
     {{-- description --}}
-        <div class="text-center my-3 text-black text-md"> 
+        <div class="text-center my-3 text-black dark:text-white text-md"> 
             {{ __('Fill the following fields to Login') }}
         </div>
     {{-- Email filed --}}
@@ -18,7 +18,7 @@
                 autofocus 
                 autocomplete="email" 
                 placeholder="{{ __('Enter your Email') }} "
-                class="outline-none placeholder-gray-500 flex-1 h-8"
+                class="outline-none placeholder-gray-500 flex-1 h-8 w-full"
             >   
         </div>
         @error('email')
@@ -36,7 +36,7 @@
                 required 
                 autocomplete="current-password" 
                 placeholder="{{ __('Enter your Password') }}"
-                class="outline-none placeholder-gray-500 flex-1 h-8" 
+                class="outline-none placeholder-gray-500 flex-1 h-8 w-full" 
             >
         </div>
         @error('password')
@@ -60,13 +60,13 @@
                 id="remember" 
                 {{ old('remember') ? 'checked' : '' }}
             >
-            <label class="form-check-label text-black" for="remember">
+            <label class="form-check-label text-black dark:text-white" for="remember">
                 {{ __('Remember Me') }}
             </label>
         </div>
     {{-- Submit Button --}}
         <div class="flex flex-row-reverse">
-            <button type="submit" class="btn bg-green mb-1 px-5 py-2.5 text-white">
+            <button type="submit" class="btn bg-green mb-1 px-5 py-2.5 text-black">
                 {{__('Submit')}}
             </button>
         </div>
@@ -74,7 +74,7 @@
     {{-- Login with socialite --}}
         <div class="text-center flex justify-between items-center"> 
             <div class="flex-1 h-0.5 bg-gray-300 ml-10 mr-5"></div>
-            <div>{{__('Or')}}</div> 
+            <div class="dark:text-white">{{__('Or')}}</div> 
             <div class="mr-10 ml-5 flex-1 h-0.5 bg-gray-300"></div></div>
         <div class="flex flex-col  my-3">
             <a href="#" class="flex-1 flex-row px-2 py-2.5 text-center bg-red-500  my-1 text-white rounded h-14 items-center"><i class="fab fa-google"></i>
