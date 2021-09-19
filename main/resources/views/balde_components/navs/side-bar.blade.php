@@ -1,6 +1,6 @@
 <nav class="side-bar" id="side-bar" >
     <i id="cancel"> &times</i>
-    <div class="top">
+    <div class="top dark:bg-gray-600">
         <i class="fas fa-utensils"></i>
         <span>{{ setting('app_name') }}</span>
     </div>

@@ -1,9 +1,9 @@
 <!-- navbar-brand -->
 <div >
-    <button id="show-side-bar" class="md:hidden nav-link absolute left-4 top-2 w-10 h-10 outline-none text-lg border-none"><i class="fas fa-align-left"></i></button>
-    <a class="navbar-brand font-semibold hover:text-gray-900" href="/">{{ setting('app_name') }} </a>
+    <button id="show-side-bar" class="md:hidden nav-link absolute left-4 top-2 w-10 h-10 outline-none text-lg border-none dark:text-white"><i class="fas fa-align-left"></i></button>
+    <a class="navbar-brand font-semibold hover:text-gray-900 dark:text-white" href="/">{{ setting('app_name') }} </a>
     @guest
-        <a class="nav-link md:hidden absolute right-6 top-3 w-10 h-10 text-lg" href="/login">
+        <a class="nav-link md:hidden absolute right-6 top-3 w-10 h-10 text-lg dark:text-white" href="/login">
             <i class="fas fa-sign-in-alt"></i>
         </a>
     @else
@@ -26,7 +26,7 @@
 
 </div>
 <!-- links -->
-<div class="hidden md:flex md:flex-row">
+<div class="hidden md:flex md:flex-row dark:text-white">
     <ul class="navbar-nav flex flex-row mr-auto ">
         <li class="nav-item ml-3">
             <a class="nav-link " aria-current="page" href="/"> 

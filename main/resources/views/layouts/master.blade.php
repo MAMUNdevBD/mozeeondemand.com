@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,13 +10,13 @@
         {{-- title of the site --}}
         <title>{{ setting('app_name') }} @yield('title')</title>
         {{-- tab icon --}}
-        <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="{{ $app_logo }}" type="image/x-icon"/>
         {{-- bootstrap css --}}
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('/main/public/css/app.css') }}" rel="stylesheet">
         {{-- tailwind css --}}
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('/main/public/css/main.css') }}" rel="stylesheet">
         {{-- costume style --}}
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('/main/public/css/style.css') }}" rel="stylesheet">
         {{-- google_maps_key from database --}}
         <script type="text/javascript" defer>const google_maps_key = "<?php echo setting('google_maps_key');?>"; </script>
         @yield('extraStyle')
@@ -77,16 +77,16 @@
             }
         </style>
     </head>
-    <body>
+    <body class=" dark:bg-gray-900">
         <div id="app">
             <button type="button" id="top" class="z-50 hidden bg-green text-white text-2xl py-1 px-2 rounded-full outline-none border-none fixed bottom-2 right-5">
                 <i class="fas fa-chevron-up"></i>
             </button>
             @yield('content')
         </div>
-        <script src="{{asset('js/app.js')}}"></script>
-        <script src="{{asset('js/main.js')}}"></script>
-        <script src="{{asset('js/costum-slick.js')}}"></script>  
+        <script src="{{asset('/main/public/js/app.js')}}"></script>
+        <script src="{{asset('/main/public/js/main.js')}}"></script>
+        <script src="{{asset('/main/public/js/costum-slick.js')}}"></script>  
         @yield('extraJs')
         @error('search')
                 <script type="application/javascript">

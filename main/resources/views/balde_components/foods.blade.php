@@ -1,4 +1,4 @@
-<section class="container py-4 w-full flex flex-col lg:flex-row ">
+<section class="container py-4 w-full flex flex-col lg:flex-row">
     <div class="w-full mt-3">
         <div class="grid gap-5 grid-cols-1 md:grid-cols-2 ">
             @forelse ($foods as $food)
@@ -10,17 +10,17 @@
                             <img src='/images/food-placeholder.jpeg' alt="food image" class="h-full w-full rounded-l-md object-cover">
                         @endif
                     </div>
-                    <div class="flex-1 relative flex flex-col justify-between bg-gray-50 rounded-r-md px-4 pt-4 pb-3">
+                    <div class="flex-1 relative flex flex-col justify-between bg-gray-50 rounded-r-md px-4 pt-4 pb-3 dark:bg-gray-500">
                         <div class="flex w-full justify-between align-items-start">
                             <div>
-                                <span class="text-gray-800 ">
+                                <span class="text-gray-800 dark:text-gray-100">
                                     {{$food->category->name}}
                                 </span>
-                                <h2 class="text-black text-2xl font-bold ">
+                                <h2 class="text-black dark:text-white text-2xl font-bold ">
                                     {{$food->name}}
                                 </h2>
-                                <p class="text-gray-400 text-sm">{{$food->restaurant->name}}</p>
-                                <p class="text-gray-400 text-xs">{{$food->restaurant->address}}</p>
+                                <p class="text-gray-400 dark:text-gray-800 text-sm">{{$food->restaurant->name}}</p>
+                                <p class="text-gray-400 dark:text-gray-800 text-xs">{{$food->restaurant->address}}</p>
                             </div>
                             @if ($food->rate)
                                 <div class="bg-gray-200 py-1 px-2 rounded">
@@ -45,12 +45,12 @@
                                 @endif
                             </div>
                             <div class="text-sm">
-                                <span class="px-1 @if (!$food->restaurant->available_for_delivery || $food->restaurant->closed) line-through text-gray-400 @else text-gray-600 @endif" >
+                                <span class="px-1 @if (!$food->restaurant->available_for_delivery || $food->restaurant->closed) line-through text-gray-400 @else text-gray-600 dark:text-white @endif" >
                                     {{__("Delivery")}}
                                     <i class="fas fa-motorcycle"></i>
                                 </span>
 
-                                <span class="px-1 @if ($food->restaurant->closed) line-through text-gray-400 @else text-gray-600 @endif" >
+                                <span class="px-1 @if ($food->restaurant->closed) line-through text-gray-400 @else text-gray-600 dark:text-white @endif" >
                                     {{__("Take away")}}
                                     <i class="fas fa-shopping-basket"></i>
                                 </span>

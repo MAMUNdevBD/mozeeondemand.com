@@ -5,7 +5,7 @@
       <ul class="nav nav-pills" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <a
-            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 transition duration-300 ease-in-out active"
+            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 dark:text-gray-100 transition duration-300 ease-in-out active"
             id="home-tab"
             data-toggle="tab"
             href="#home"
@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item" role="presentation">
           <a
-            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 transition duration-300 ease-in-out"
+            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 dark:text-gray-100 transition duration-300 ease-in-out"
             id="profile-tab"
             data-toggle="tab"
             href="#profile"
@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item" role="presentation">
           <a
-            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 transition duration-300 ease-in-out"
+            class="nav-link font-semibold py-2.5 px-4 bg-transparent text-gray-600 dark:text-gray-100 transition duration-300 ease-in-out"
             id="contact-tab"
             data-toggle="tab"
             href="#contact"
@@ -50,8 +50,8 @@
           id="home"
           role="tabpanel"
         >
-          <p v-if="restaurant" v-html="restaurant.description"></p>
-          <h1 class="text-center text-black font-bold text-4xl my-10">
+          <p class="dark:text-gray-100" v-if="restaurant" v-html="restaurant.description"></p>
+          <h1 class="text-center text-black dark:text-white font-bold text-4xl my-10">
             {{ $t("Our Menu") }}
           </h1>
 
@@ -64,7 +64,7 @@
             <div v-if="Category">
               <a
                 :href="`/category/${Category[0].category.id}`"
-                class="text-left text-black hover:text-gray-800 no-underline cursor-pointer font-semibold text-xl mb-2"
+                class="text-left text-black dark:text-white hover:text-gray-800 no-underline cursor-pointer font-semibold text-xl mb-2"
               >
                 {{ Category[0].category.name }}
               </a>
@@ -72,13 +72,13 @@
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th scope="col" class="col-8 text-black">
+                      <th scope="col" class="col-8 text-black dark:text-white">
                         {{ $t("Food") }}
                       </th>
-                      <th scope="col" class="text-black text-center">
+                      <th scope="col" class="text-black dark:text-white text-center">
                         {{ $t("Price") }}
                       </th>
-                      <th scope="col" class="text-black text-center">
+                      <th scope="col" class="text-black dark:text-white text-center">
                         {{ $t("Order") }}
                       </th>
                     </tr>
@@ -114,12 +114,12 @@
                           />
                           <div class="flex flex-col justify-center ml-5">
                             <div
-                              class="md:text-base text-sm text-black font-semibold"
+                              class="md:text-base text-sm text-black dark:text-white font-semibold"
                             >
                               {{ index + 1 }}. {{ food.food.name }}
                             </div>
                             <div
-                              class="text-gray-700 font-medium text-xs md:text-sm"
+                              class="text-gray-700 dark:text-gray-100 font-medium text-xs md:text-sm"
                             >
                               <span
                                 v-if="food.food.featured === 1"
@@ -154,7 +154,7 @@
                       <td>
                         <div
                           v-html="food.price_format"
-                          class="text-black text-center font-bold pt-4"
+                          class="text-black dark:text-white text-center font-bold pt-4"
                         ></div>
                       </td>
                       <!-- add to orders list -->
@@ -165,7 +165,7 @@
                             class="make_order font-bold text-green fas fa-plus mt-1 cursor-pointer"
                           ></span>
                           <div
-                            class="order hidden text-left absolute w-60 bg-white shadow-sm rounded mt-2 -ml-44 border-gray-300 border-1 p-2"
+                            class="order hidden text-left absolute w-60 bg-gray-50 dark:bg-black shadow-sm rounded mt-2 -ml-44 border-gray-300 border-1 p-2"
                           >
                             <!-- Add ingredients -->
                             <div
@@ -174,10 +174,10 @@
                               ) in food.extras_groups"
                               :key="index"
                             >
-                              <p class="font-semibold text-black text-sm mt-3">
+                              <p class="font-semibold text-black dark:text-white text-sm mt-3">
                                 {{ index }}
                               </p>
-                              <hr class="my-1 text-gray-500" />
+                              <hr class="my-1 text-gray-500 dark:text-gray-100" />
                               <label
                                 v-for="(item, index) in extras_group"
                                 :key="index"
@@ -185,7 +185,7 @@
                                 :for="`${item.id}-${index}`"
                               >
                                 <div class="flex flex-row justify-between pr-3">
-                                  <p>{{ item.name }}</p>
+                                  <p class="dark:text-white">{{ item.name }}</p>
                                   <p>
                                     <span class="font-semibold text-green">{{
                                       showPrice(item.price)
@@ -205,10 +205,10 @@
                               </label>
                             </div>
                             <!-- The number of meals -->
-                            <p class="font-semibold text-black text-sm mt-3">
+                            <p class="font-semibold text-black dark:text-white text-sm mt-3">
                               {{ $t("Total meals") }}
                             </p>
-                            <hr class="my-1 text-gray-500" />
+                            <hr class="my-1 text-gray-500 dark:text-gray-100" />
                             <div class="my-3">
                               <input
                                 class="form-control mb-2 p-2 cursor-pointer"
@@ -222,7 +222,7 @@
                             <!-- valide -->
                             <button
                               @click="addToOrders(food)"
-                              class="bg-green text-white font-semibold w-full py-1.5 rounded"
+                              class="bg-green text-black font-semibold w-full py-1.5 rounded"
                             >
                               {{ $t("Add to your order") }}
                             </button>
@@ -480,9 +480,9 @@
       <!-- order liste & prices -->
       <div class="w-full border-2 rounded border-gray-300 border-dotted">
         <div
-          class="text-center border-b-2 bg-gray-100 border-gray-300 border-dotted py-3"
+          class="text-center border-b-2 bg-gray-100 dark:bg-gray-700 border-gray-300 border-dotted py-3"
         >
-          <p class="text-2xl font-bold">
+          <p class="text-2xl font-bold dark:text-white">
             {{ $t("Order Summary") }}
           </p>
           <p class="text-red-600 font-semibold">
@@ -498,7 +498,7 @@
           >
             <div
               @click="removeFromOrders(index)"
-              class="text-black font-normal cursor-pointer hover:text-red-600"
+              class="text-black dark:text-white font-normal cursor-pointer hover:text-red-600"
             >
               <i class="fas fa-trash-alt mr-1"></i>
               {{ order.numberOfMeals }} x {{ order.food_name }}
@@ -509,17 +509,17 @@
                 {{ $t("With extras") }}
               </span>
             </div>
-            <div class="text-black font-bold">
+            <div class="text-black dark:text-white font-bold">
               {{ showPrice(order.price) }}
             </div>
           </div>
           <!-- taxes -->
           <br />
           <div class="flex flex-row justify-between my-2">
-            <div class="text-black font-normal">
+            <div class="text-black dark:text-white font-normal">
               {{ $t("Subtotal") }}
             </div>
-            <div class="text-black font-bold">
+            <div class="text-black dark:text-white font-bold">
               {{ showPrice(ordersTotalPrice) }}
             </div>
           </div>
@@ -527,10 +527,10 @@
             v-if="orderType === 'Delivery'"
             class="flex flex-row justify-between my-2"
           >
-            <div class="text-black font-normal">
+            <div class="text-black dark:text-white font-normal">
               {{ $t("Delivery fee") }}
             </div>
-            <div class="text-black font-bold">
+            <div class="text-black dark:text-white font-bold">
               {{ showPrice(restaurant.delivery_fee) }}
             </div>
           </div>
@@ -548,10 +548,10 @@
               {{ showPrice(ordersTotalPrice) }}
             </div>
           </div>
-          <hr class="text-gray-400 my-2" />
+          <hr class="text-gray-400 dark:text-gray-50 my-2" />
           <!-- Delivery or Take away -->
           <div
-            class="flex flex-row justify-between mx-1 my-2 text-gray-800 font-normal"
+            class="flex flex-row justify-between mx-1 my-2 text-gray-800 dark:text-white font-normal"
           >
             <label
               class="flex-1 input_radio block relative pl-10 cursor-pointer text-lg select-none"
@@ -591,11 +591,11 @@
           <div class="my-2">
             <button
               @click="makeOrder"
-              class="form-control mb-2 p-2 border-none bg-green text-white font-semibold"
+              class="form-control mb-2 p-2 border-none bg-green text-black font-semibold"
             >
               {{ $t("Make your Order") }}
             </button>
-            <p class="text-center text-gray-600 text-sm font-light">
+            <p class="text-center text-gray-600 dark:text-gray-100 text-sm font-light">
               {{ $t("Make your Order description") }}
             </p>
           </div>

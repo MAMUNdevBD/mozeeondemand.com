@@ -1,9 +1,12 @@
 module.exports = {
   purge: {
-    enabled: true,
-    content: ['./resources/views/**/*.php'],
+    enabled: false,
+    content: [
+      './resources/views/**/*.php',
+      './resources/js/**/*.vue'
+    ],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
   },
