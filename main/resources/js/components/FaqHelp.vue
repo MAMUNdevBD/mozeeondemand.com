@@ -2,16 +2,16 @@
     <div>
         <notifications position="bottom right" width="400px" group="foo" />
         <!-- topic -->
-        <section class="py-16 flex flex-col bg-gray-100">
+        <section class="py-16 flex flex-col bg-gray-100 dark:bg-gray-900">
 			<div class="container">
                 <div class="w-full  ">
-                    <div class="w-full  self-center content-center flex flex-row justify-center -mt-4 mb-2">
+                    <div class="w-full self-center content-center flex flex-row justify-center -mt-4 mb-2">
                         <p class="border-1 border-green w-44"></p>
                     </div>
-                    <h2 class="text-black text-4xl font-bold py-2 text-center" >
+                    <h2 class="text-black dark:text-white text-4xl font-bold py-2 text-center" >
                         {{$t("Select a topic")}}   
                     </h2>
-                    <p class="text-gray-600 text-md font-normal  py-2 text-center">
+                    <p class="text-gray-600 dark:text-gray-200 text-md font-normal  py-2 text-center">
                         {{$t("Select a topic description")}} 
                     </p>
                     <div  v-if="categorys.length < 1" class="text-2xl text-black font-semibold text-center flex flex-col justify-center items-center ">
@@ -20,12 +20,12 @@
                         </p>
                     </div>
                     <div class="w-full my-3 grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -mt-1 ">                        
-                        <div v-for="(category, index) in categorys" :key="index" @click="about(category)" class="box_help px-2 rounded bg-white shadow-md h-56  w-full cursor-pointer flex flex-col justify-center items-center ">
+                        <div v-for="(category, index) in categorys" :key="index" @click="about(category)" class="box_help px-2 rounded bg-gray-50 dark:bg-black shadow-md h-56  w-full cursor-pointer flex flex-col justify-center items-center ">
                             <i class="far fa-comments fa-4x fa-fw text-green"></i>
-                            <h3 class="text-black text-xl font-bold">
+                            <h3 class="text-black dark:text-white text-xl font-bold">
                                 {{category.name}}
                             </h3>
-                            <p class="text-center text-gray-500">
+                            <p class="text-center text-gray-500 dark:text-gray-300">
                                 {{$t("Topic box description" , { category_name: category.name } )}}
                             </p>
                         </div>
@@ -34,18 +34,18 @@
             </div>  
 		</section>
         <!-- Popular articles -->
-        <section class="flex flex-col pt-2 pb-5 container my-3 bg-white">
+        <section class="flex flex-col pt-2 pb-5 container my-3 bg-gray-50 dark:bg-black">
             <span class="w-40 my-2 border-1 border-green"></span>
             <div class="flex items-center justify-between">
-                <h2 class="text-black text-4xl font-medium pt-2 pb-3">  
+                <h2 class="text-black dark:text-white text-4xl font-medium pt-2 pb-3">  
                     {{$t("Popular articles")}}
                 </h2>
-                <button @click="viweAll()" v-if="faqs.length != faqsSelected.length" class="nav-link text-white align-middle text-center bg-green rounded-3xl py-2 px-4 leading-6">
+                <button @click="viweAll()" v-if="faqs.length != faqsSelected.length" class="nav-link text-black align-middle text-center bg-green rounded-3xl py-2 px-4 leading-6">
                     {{$t("View all")}}
                 </button>
             </div>
             <div class="flex mb-3 justify-between">
-                <p class="text-lg text-gray-700">
+                <p class="text-lg text-gray-700 dark:text-gray-200">
                     {{$t("Popular articles Description")}}
                 </p>                
             </div>
@@ -59,11 +59,11 @@
                     </p>
                 </div>
                 <div v-for="(faq, index) in faqsSelected" :key="index" onclick="showArticle(this)" class="flex-col flex w-full article   ">
-                    <div class="bg-gray-100 mb-0.5 p-4 w-full flex flex-row justify-between items-center cursor-pointer rounded"> 
-                        <h1 v-html="faq.faq.question" class="text-lg text-gray-400 font-semibold"></h1>
+                    <div class="bg-gray-100 dark:bg-gray-800 mb-0.5 p-4 w-full flex flex-row justify-between items-center cursor-pointer rounded"> 
+                        <h1 v-html="faq.faq.question" class="text-lg text-gray-400 dark:text-gray-100 font-semibold"></h1>
                         <i id="icon" class="fa fa-plus text-green" ></i>
                     </div>
-                    <div id="desc" class="bg-gray-100 text-gray-600 text-sm p-4 w-full hidden  rounded "> 
+                    <div id="desc" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 text-gray-600 text-sm p-4 w-full hidden  rounded "> 
                         <p v-html="faq.faq.answer"></p>
                     </div>
                 </div>      			

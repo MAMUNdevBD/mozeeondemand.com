@@ -10,7 +10,7 @@
         {{-- title of the site --}}
         <title>{{ setting('app_name') }} @yield('title')</title>
         {{-- tab icon --}}
-        <link rel="shortcut icon" href="{{ $app_logo }}" type="image/x-icon"/>
+        <link rel="shortcut icon" href="{{ $app_logo ?? '' }}" type="image/x-icon"/>
         {{-- bootstrap css --}}
         <link href="{{ asset('/main/public/css/app.css') }}" rel="stylesheet">
         {{-- tailwind css --}}

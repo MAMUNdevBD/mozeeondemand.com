@@ -1,6 +1,9 @@
 <?php
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -17,7 +20,17 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::redirect('/home', '/');
-Route::view('/help', 'pages.help');
+Route::get('/help', function(){
+    $appLogo = DB::table('media')->where('custom_properties->uuid', setting('app_logo'))->first();
+    if($appLogo){
+        $app_logo = '/admin/main/storage/app/public/'.$appLogo->order_column.'/'.$appLogo->file_name;
+    }else{
+        $app_logo = '/images/logo.png';
+    }
+    return view('pages.help', [
+        'app_logo' => $app_logo
+    ]);
+});
 
 Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/search',[\App\Http\Controllers\HomeController::class, 'search']);

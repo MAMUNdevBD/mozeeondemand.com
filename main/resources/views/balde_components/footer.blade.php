@@ -4,7 +4,7 @@
             <div class="w-full px-0 h-40 lg:w-1/4 md:w-1/2">
                     <div class=" -m-5 ">
                         <a href="/" >
-                            <img src="{{ $app_logo }}"  alt="logo" class="h-20 mt-2" style="max-width:300px" >
+                            <img src="{{ $app_logo ?? '' }}"  alt="logo" class="h-20 mt-2" style="max-width:300px" >
                         </a>
                         <p class="text-lg text-gray-200 mx-3 font-semibold ">{{setting('app_name')}}</p>
                         <p class="text-sm text-gray-200 mx-3 ">{{setting('app_short_description')}}</p>

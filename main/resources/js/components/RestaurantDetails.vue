@@ -243,7 +243,7 @@
           id="profile"
           role="tabpanel"
         >
-          <div v-html="restaurant.description"></div>
+          <div class="dark:text-white" v-html="restaurant.description"></div>
           <div v-if="gallerie.length > 0">
             <h1 class="text-center text-black font-bold text-2xl mt-10 mb-3">
               {{ $t("Pictures from our users") }}
@@ -303,16 +303,16 @@
             </div>
           </div>
 
-          <div class="bg-gray-50 rounded my-8 py-2">
-            <h1 class="text-center text-black font-bold text-2xl mt-10 mb-3">
+          <div class="bg-gray-50 dark:bg-gray-800 rounded my-8 py-2">
+            <h1 class="text-center text-black dark:text-white font-bold text-2xl mt-10 mb-3">
               {{ $t("How to get to", { restaurant_name: restaurant.name }) }}
             </h1>
             <div class="w-full flex flex-col lg:flex-row lg:justify-between">
               <div class="flex-1 flex flex-col mr-1 justify-start py-2 px-3">
-                <h1 class="text-black font-semibold text-lg py-2">
+                <h1 class="text-black dark:text-white font-semibold text-lg py-2">
                   {{ $t("Address") }}
                 </h1>
-                <p class="text-base text-gray-600 font-medium">
+                <p class="text-base text-gray-600 dark:text-gray-200 font-medium">
                   <i class="fas fa-home"></i>
                   {{ restaurant.address }}
                 </p>
@@ -323,7 +323,7 @@
                   {{ $t("Get directions") }}
                 </a>
                 <span class="text-transparent bg-transparent h-6"></span>
-                <h1 class="text-black font-semibold text-base mb-2">
+                <h1 class="text-black dark:text-white font-semibold text-base mb-2">
                   {{ $t("Follow Us") }}
                 </h1>
                 <div class="flex flex-row">
@@ -348,20 +348,20 @@
                 </div>
               </div>
               <div class="flex-1 flex flex-col mr-1 justify-start py-2 px-3">
-                <h1 class="text-black font-semibold text-lg py-2">
+                <h1 class="text-black dark:text-white font-semibold text-lg py-2">
                   {{ $t("Contact Us") }}
                 </h1>
-                <p class="text-base text-gray-600 font-normal">
+                <p class="text-base text-gray-600 dark:text-gray-200 font-normal">
                   <i class="fas fa-mobile-alt w-5"></i> {{ restaurant.mobile }}
                   <br />
                   <i class="fas fa-phone w-5"></i> {{ restaurant.phone }}
                 </p>
-                <h1 class="text-black font-semibold text-lg py-2">
+                <h1 class="text-black dark:text-white font-semibold text-lg py-2">
                   {{ $t("INFORMATION") }}
                 </h1>
                 <!-- <p class="text-base text-gray-800 font-bold"></p> -->
                 <p
-                  class="text-base text-gray-600 font-normal"
+                  class="text-base text-gray-600 dark:text-gray-200 font-normal"
                   v-html="restaurant.information"
                 ></p>
                 <span class="text-transparent bg-transparent h-6"></span>
@@ -390,7 +390,7 @@
           <!-- ratiing -->
           <div class="flex flex-col lg:flex-row">
             <div
-              class="w-full lg:w-52 h-32 bg-gray-800 rounded mb-3 flex flex-row justify-center items-center text-white"
+              class="w-full lg:w-52 h-32 bg-gray-800 rounded mb-3 flex flex-row justify-center items-center text-white dark:text-black"
             >
               <div v-if="restaurant_rate" class="flex flex-col text-center">
                 <p class="text-5xl font-extrabold">
@@ -421,7 +421,7 @@
               <div v-if="restaurant" class="flex flex-row justify-end">
                 <a
                   :href="`/leave_review/${restaurant.id}`"
-                  class="nav-link my-2 py-2 px-4 border-none bg-green rounded text-white font-medium hover:bg-gray-600 transition ease-in-out duration-300"
+                  class="nav-link my-2 py-2 px-4 border-none bg-green rounded text-black font-medium hover:bg-gray-600 transition ease-in-out duration-300"
                 >
                   {{ $t("Leave review") }}
                 </a>

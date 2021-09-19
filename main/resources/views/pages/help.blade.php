@@ -14,7 +14,7 @@
     {{-- top nav bar --}}
         @include('balde_components.navs.nav-bar-v1')
     {{-- main  --}}
-        <main class="w-full bg-white" >
+        <main class="w-full bg-gray-50 dark:bg-black" >
             <div class=" w-full  relative flex justify-center  " style="z-index:0; height: 65vh;">	
                 <img src="/images/faq.jpg" alt="banner" class="absolute w-full h-full object-cover opacity-70 z-0">
                 <div class="w-full h-full bg-black"></div>
