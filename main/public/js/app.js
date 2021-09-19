@@ -65249,138 +65249,156 @@ var render = function() {
         attrs: { position: "bottom right", width: "400px", group: "foo" }
       }),
       _vm._v(" "),
-      _c("header", { staticClass: "py-3 w-full md:h-24 bg-gray-100" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container flex flex-col md:flex-row md:justify-between items-center"
-          },
-          [
-            _c("div", { staticClass: "hidden md:block" }, [
-              _c("div", { staticClass: "text-black text-sm py-1" }, [
+      _c(
+        "header",
+        { staticClass: "py-3 w-full md:h-24 bg-gray-100 dark:bg-gray-700" },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "container flex flex-col md:flex-row md:justify-between items-center"
+            },
+            [
+              _c("div", { staticClass: "hidden md:block" }, [
                 _c(
-                  "a",
-                  {
-                    staticClass: "hover:text-gray-800 hover:no-underline",
-                    attrs: { href: "/" }
-                  },
+                  "div",
+                  { staticClass: "text-black dark:text-white text-sm py-1" },
                   [
-                    _vm._v(
-                      "\n            " + _vm._s(_vm.$t("Home")) + "\n          "
+                    _c(
+                      "a",
+                      {
+                        staticClass: "hover:text-gray-800 hover:no-underline",
+                        attrs: { href: "/" }
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.$t("Home")) +
+                            "\n          "
+                        )
+                      ]
+                    ),
+                    _vm._v("\n            >  \n          "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "text-green hover:text-green-400 hover:no-underline",
+                        attrs: { href: "/restaurants" }
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.$t("Restaurants")) +
+                            "\n          "
+                        )
+                      ]
                     )
                   ]
                 ),
-                _vm._v("\n            >  \n          "),
+                _vm._v(" "),
                 _c(
-                  "a",
+                  "p",
                   {
                     staticClass:
-                      "text-green hover:text-green-400 hover:no-underline",
-                    attrs: { href: "/restaurants" }
+                      "text-black dark:text-white font-medium text-lg py-1"
                   },
                   [
                     _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.$t("Restaurants")) +
-                        "\n          "
+                      "\n          " +
+                        _vm._s(_vm.$t("Search for restaurants or foods")) +
+                        "\n        "
                     )
                   ]
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "text-black font-medium text-lg py-1" }, [
-                _vm._v(
-                  "\n          " +
-                    _vm._s(_vm.$t("Search for restaurants or foods")) +
-                    "\n        "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "w-full h-12 md:w-2/5 md:h-4/6 bg-white flex flex-row rounded"
-              },
-              [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.search_value,
-                      expression: "search_value"
-                    }
-                  ],
-                  staticClass: "flex-1 bg-white outline-none p-3 rounded-l-sm",
-                  attrs: {
-                    id: "search",
-                    type: "search",
-                    placeholder: _vm.$t("Search for restaurants"),
-                    autocomplete: "off"
-                  },
-                  domProps: { value: _vm.search_value },
-                  on: {
-                    keyup: [
-                      function($event) {
-                        if (
-                          !$event.type.indexOf("key") &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.search()
-                      },
-                      function($event) {
-                        if (
-                          !$event.type.indexOf("key") &&
-                          _vm._k(
-                            $event.keyCode,
-                            "delete",
-                            [8, 46],
-                            $event.key,
-                            ["Backspace", "Delete", "Del"]
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.searchKeyupDelete()
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full h-12 md:w-2/5 md:h-4/6 bg-white flex flex-row rounded"
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.search_value,
+                        expression: "search_value"
                       }
                     ],
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.search_value = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "w-14 bg-green rounded-r-sm text-white",
+                    staticClass:
+                      "flex-1 bg-white outline-none p-3 rounded-l-sm",
+                    attrs: {
+                      id: "search",
+                      type: "search",
+                      placeholder: _vm.$t("Search for restaurants"),
+                      autocomplete: "off"
+                    },
+                    domProps: { value: _vm.search_value },
                     on: {
-                      click: function($event) {
-                        return _vm.search()
+                      keyup: [
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.search()
+                        },
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "delete",
+                              [8, 46],
+                              $event.key,
+                              ["Backspace", "Delete", "Del"]
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.searchKeyupDelete()
+                        }
+                      ],
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.search_value = $event.target.value
                       }
                     }
-                  },
-                  [_c("i", { staticClass: "fas fa-search" })]
-                )
-              ]
-            )
-          ]
-        )
-      ]),
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "w-14 bg-green rounded-r-sm text-black",
+                      on: {
+                        click: function($event) {
+                          return _vm.search()
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-search" })]
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      ),
       _vm._v(" "),
       _c(
         "div",
@@ -65511,7 +65529,7 @@ var render = function() {
                             "a",
                             {
                               staticClass:
-                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out",
+                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out",
                               attrs: {
                                 onclick: "this.classList.toggle('avtive')"
                               }
@@ -65548,7 +65566,7 @@ var render = function() {
                                     "label",
                                     {
                                       staticClass:
-                                        "input_checkbox relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base",
+                                        "input_checkbox relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base dark:text-white",
                                       attrs: { for: cuisine.id }
                                     },
                                     [
@@ -65575,7 +65593,7 @@ var render = function() {
                                           }
                                         ],
                                         staticClass:
-                                          "absolute opacity-0 cursor-pointer h-0 w-0",
+                                          "absolute opacity-0 cursor-pointer h-0 w-0 text-black",
                                         attrs: {
                                           name: cuisine.name,
                                           id: cuisine.id,
@@ -65648,14 +65666,14 @@ var render = function() {
                         "li",
                         {
                           staticClass:
-                            "w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white"
+                            "w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150"
                         },
                         [
                           _c(
                             "a",
                             {
                               staticClass:
-                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out",
+                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out",
                               attrs: {
                                 onclick: "this.classList.toggle('avtive')"
                               }
@@ -65685,14 +65703,14 @@ var render = function() {
                                 {
                                   key: index,
                                   staticClass:
-                                    "w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white border-none"
+                                    "w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 border-none"
                                 },
                                 [
                                   _c(
                                     "label",
                                     {
                                       staticClass:
-                                        "flex-1 mt-1 input_radio block relative pl-8 cursor-pointer text-base select-none"
+                                        "flex-1 mt-1 input_radio block relative pl-8 cursor-pointer text-base select-none dark:text-white"
                                     },
                                     [
                                       _vm._v(
@@ -65748,14 +65766,14 @@ var render = function() {
                         "li",
                         {
                           staticClass:
-                            "w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white"
+                            "w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150"
                         },
                         [
                           _c(
                             "a",
                             {
                               staticClass:
-                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out",
+                                "drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out",
                               attrs: {
                                 onclick: "this.classList.toggle('avtive')"
                               }
@@ -65850,7 +65868,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "my-3 w-full h-10 rounded border-none outline-none bg-green text-white",
+                        "my-3 w-full h-10 rounded border-none outline-none bg-green text-black",
                       on: {
                         click: function($event) {
                           return _vm.filterRestarants()

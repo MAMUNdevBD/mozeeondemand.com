@@ -24,7 +24,7 @@
                 {{__("indexPage_footer_banner_description")}}
             </p>
             <br>
-            <a href="/contactus" class="nav-link bg-green text-white font-normal p-2 rounded md:w-1/3 text-center">
+            <a href="/contactus" class="nav-link bg-green text-black font-normal p-2 rounded md:w-1/3 text-center">
                 {{ __('Contact Us') }} 
             </a>
         </div>

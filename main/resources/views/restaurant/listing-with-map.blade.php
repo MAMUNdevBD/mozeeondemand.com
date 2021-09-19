@@ -3,7 +3,7 @@
 
 
 @section('extraStyle')
-<link href="{{ asset('css/checkbox-radio-input.css') }}" rel="stylesheet">
+<link href="{{ asset('/main/public/css/checkbox-radio-input.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -20,6 +20,6 @@
     @include('balde_components.footer')      
 @endsection
 @section('extraJs')
-<script src="{{asset('js/maps.js')}}"></script>
+<script src="{{asset('/main/public/js/maps.js')}}"></script>
 @endsection
 

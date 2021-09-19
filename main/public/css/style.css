@@ -223,7 +223,7 @@ a {
 
 .filter ul li a:hover {
   color: #ffe41c;
-  background-color: #fafafa;
+  background-color: #424242;
 }
 
 .filter ul li a .down {
@@ -232,7 +232,7 @@ a {
 
 .filter ul li a.avtive {
   color: #ffe41c;
-  background-color: #fafafa;
+  background-color: #141414;
 }
 
 .filter ul li a.avtive .down {

@@ -1,12 +1,12 @@
 <template>
   <main class="w-full mt-16">
     <notifications position="bottom right" width="400px" group="foo" />
-    <header class="py-3 w-full md:h-24 bg-gray-100">
+    <header class="py-3 w-full md:h-24 bg-gray-100 dark:bg-gray-700">
       <div
         class="container flex flex-col md:flex-row md:justify-between items-center"
       >
         <div class="hidden md:block">
-          <div class="text-black text-sm py-1">
+          <div class="text-black dark:text-white text-sm py-1">
             <a href="/" class="hover:text-gray-800 hover:no-underline">
               {{ $t("Home") }}
             </a>
@@ -18,7 +18,7 @@
               {{ $t("Restaurants") }}
             </a>
           </div>
-          <p class="text-black font-medium text-lg py-1">
+          <p class="text-black dark:text-white font-medium text-lg py-1">
             {{ $t("Search for restaurants or foods") }}
           </p>
         </div>
@@ -37,7 +37,7 @@
           />
           <button
             @click="search()"
-            class="w-14 bg-green rounded-r-sm text-white"
+            class="w-14 bg-green rounded-r-sm text-black"
           >
             <i class="fas fa-search"></i>
           </button>
@@ -103,7 +103,7 @@
             >
               <a
                 onclick="this.classList.toggle('avtive')"
-                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
               >
                 {{ $t("Cuisines") }}
                 <i
@@ -117,7 +117,7 @@
                   class="w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 border-none"
                 >
                   <label
-                    class="input_checkbox relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base"
+                    class="input_checkbox relative block cursor-pointer select-none pl-8 ml-2 mb-2 text-base dark:text-white"
                     :for="cuisine.id"
                   >
                     {{ cuisine.name }}
@@ -130,7 +130,7 @@
                       :value="cuisine.id"
                       v-model="filter.cuisine"
                       type="checkbox"
-                      class="absolute opacity-0 cursor-pointer h-0 w-0"
+                      class="absolute opacity-0 cursor-pointer h-0 w-0 text-black"
                     />
                     <span
                       class="input_checkbox_checkmark rounded absolute top-0 left-0 h-5 w-5 bg-gray-300"
@@ -141,11 +141,11 @@
             </li>
             <!-- Price -->
             <li
-              class="w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white"
+              class="w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150"
             >
               <a
                 onclick="this.classList.toggle('avtive')"
-                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
               >
                 {{ $t("Price") }}
                 <i
@@ -156,10 +156,10 @@
                 <li
                   v-for="(price, index) in allPrices"
                   :key="index"
-                  class="w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white border-none"
+                  class="w-full text-base pl-4 mb-3 border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 border-none"
                 >
                   <label
-                    class="flex-1 mt-1 input_radio block relative pl-8 cursor-pointer text-base select-none"
+                    class="flex-1 mt-1 input_radio block relative pl-8 cursor-pointer text-base select-none dark:text-white"
                   >
                     {{ price.output }}
                     <input
@@ -178,11 +178,11 @@
             </li>
             <!-- Rating -->
             <li
-              class="w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150 hover:bg-white"
+              class="w-full text-base border-b-2 border-gray-200 transition ease-in-out duration-300 scale-150"
             >
               <a
                 onclick="this.classList.toggle('avtive')"
-                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black font-normal duration-200 ease-in-out"
+                class="drop_down_btn nav-link relative block w-full text-lg pl-4 py-2 no-underline cursor-pointer text-black dark:text-white font-normal duration-200 ease-in-out"
               >
                 {{ $t("Rating") }}
                 <i
@@ -220,7 +220,7 @@
           </ul>
           <button
             @click="filterRestarants()"
-            class="my-3 w-full h-10 rounded border-none outline-none bg-green text-white"
+            class="my-3 w-full h-10 rounded border-none outline-none bg-green text-black"
           >
             {{ $t("Filter") }}
           </button>

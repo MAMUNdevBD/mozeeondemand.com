@@ -97,7 +97,7 @@ button,i,a{
                 border-left: 5px solid transparent;
                 &:hover{
                     color: color(primary); 
-                    background-color: #fafafa;
+                    background-color: #424242;
                    // border-left-color: color(primary);    
                 }
                 .down{
@@ -106,7 +106,7 @@ button,i,a{
             }
             a.avtive{
                 color: color(primary); 
-                background-color: #fafafa;
+                background-color: #141414;
                 //border-left-color: color(primary);
                 .down{
                     transform: translateY(-50%) rotate(180deg);
