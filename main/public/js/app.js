@@ -66392,7 +66392,7 @@ var render = function() {
                                     "span",
                                     {
                                       staticClass:
-                                        "absolute text-white rounded top-3 right-3 text-sm font-semibold py-1 px-2 bg-red-600"
+                                        "absolute text-black rounded top-3 right-3 text-sm font-semibold py-1 px-2 bg-red-600"
                                     },
                                     [
                                       _vm._v(
@@ -66465,7 +66465,7 @@ var render = function() {
                             [
                               _c("p", {
                                 staticClass:
-                                  "text-gray-400 flex-1 h-20 overflow-hidden",
+                                  "text-gray-400 dark:text-gray-100 flex-1 h-20 overflow-hidden",
                                 domProps: {
                                   innerHTML: _vm._s(
                                     restaurant.restaurant.description
@@ -66523,7 +66523,9 @@ var render = function() {
                                             "line-through text-gray-400"
                                           ] = !restaurant.restaurant
                                             .available_for_delivery),
-                                          (_obj["text-gray-600"] =
+                                          (_obj[
+                                            "text-gray-600 dark:text-gray-100"
+                                          ] =
                                             restaurant.restaurant.available_for_delivery),
                                           _obj)
                                       },
@@ -66549,8 +66551,9 @@ var render = function() {
                                           (_obj$1[
                                             "line-through text-gray-400"
                                           ] = restaurant.restaurant.closed),
-                                          (_obj$1["text-gray-600"] = !restaurant
-                                            .restaurant.closed),
+                                          (_obj$1[
+                                            "text-gray-600 dark:text-gray-100"
+                                          ] = !restaurant.restaurant.closed),
                                           _obj$1)
                                       },
                                       [

@@ -412,7 +412,7 @@
                 </span>
                 <span
                   v-if="restaurant.restaurant.closed"
-                  class="absolute text-white rounded top-3 right-3 text-sm font-semibold py-1 px-2 bg-red-600"
+                  class="absolute text-black rounded top-3 right-3 text-sm font-semibold py-1 px-2 bg-red-600"
                 >
                   closed
                 </span>
@@ -442,7 +442,7 @@
               >
                 <p
                   v-html="restaurant.restaurant.description"
-                  class="text-gray-400 flex-1 h-20 overflow-hidden"
+                  class="text-gray-400 dark:text-gray-100 flex-1 h-20 overflow-hidden"
                 ></p>
                 <div class="w-5/12 flex flex-row justify-end">
                   <div class="flex flex-col">
@@ -461,7 +461,7 @@
                       :class="{
                         ['line-through text-gray-400']: !restaurant.restaurant
                           .available_for_delivery,
-                        ['text-gray-600']:
+                        ['text-gray-600 dark:text-gray-100']:
                           restaurant.restaurant.available_for_delivery,
                       }"
                     >
@@ -473,7 +473,7 @@
                       :class="{
                         ['line-through text-gray-400']:
                           restaurant.restaurant.closed,
-                        ['text-gray-600']: !restaurant.restaurant.closed,
+                        ['text-gray-600 dark:text-gray-100']: !restaurant.restaurant.closed,
                       }"
                     >
                       {{ $t("Take away") }}
