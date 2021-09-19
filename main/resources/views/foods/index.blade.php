@@ -50,9 +50,6 @@
                             {{__("Total")}} {{$total}}
                         </a>
                     </div>
-                    <p class="text-gray-400 dark:text-gray-100">
-                        {{__("foods_header_description")}}
-                    </p>
                 </div>
             {{-- food boxes --}}
             @include('balde_components.foods')
