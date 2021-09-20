@@ -84,6 +84,10 @@
             </button>
             @yield('content')
         </div>
+        
+        <button type="button" id="theme" class="z-50 bg-green text-black text-2xl py-1 px-2 rounded-full outline-none border-none fixed top-28 right-0 md:right-2">
+            <i class="fas fa-adjust"></i>
+        </button>
         <script src="{{asset('/main/public/js/app.js')}}"></script>
         <script src="{{asset('/main/public/js/main.js')}}"></script>
         <script src="{{asset('/main/public/js/costum-slick.js')}}"></script>  

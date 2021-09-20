@@ -91,3 +91,38 @@ if ($distance_range && $fill && distance_value) {
     $distance_range.on("input", setBar);		
     setBar();  
 }
+
+// Toggle light and Dark theme
+
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+function themes() {
+    if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.remove('dark')
+    } else {
+        document.documentElement.classList.add('dark')
+    }
+}
+themes()
+
+var themeButton = document.getElementById('theme')
+themeButton.onclick = () => {
+    console.log('ok');
+    var theme = localStorage.theme
+    switch (theme) {
+        case 'light':
+            localStorage.theme = 'dark'
+            break;
+        case 'dark':
+            localStorage.theme = 'light'
+            break;
+        default:
+            localStorage.theme = 'light'
+            break;
+    }
+    themes()
+}
+// // Whenever the user explicitly chooses light mode
+// localStorage.theme = 'light'
+
+// // Whenever the user explicitly chooses dark mode
+// localStorage.theme = 'dark'
